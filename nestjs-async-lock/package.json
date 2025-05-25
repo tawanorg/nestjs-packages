@@ -1,6 +1,6 @@
 {
   "name": "@tawandotorg/nestjs-async-lock",
-  "version": "1.1.7",
+  "version": "1.1.9",
   "main": "./src/index.js",
   "module": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -40,9 +40,9 @@
     "url": "https://github.com/tawanorg/nestjs-packages/tree/main/nestjs-async-lock"
   },
   "bugs": {
-    "url": "https://github.com/tawanorg/nestjs-async-lock/issues"
+    "url": "https://github.com/tawanorg/nestjs-packages/issues"
   },
-  "homepage": "https://github.com/tawanorg/nestjs-async-lock#readme",
+  "homepage": "https://github.com/tawanorg/nestjs-packages/blob/main/nestjs-async-lock/README.md",
   "scripts": {
     "build": "nx build nestjs-async-lock"
   },

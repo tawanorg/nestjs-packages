@@ -16,16 +16,20 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
+      # Install root dependencies
       - run: npm ci
 
       # Install nx globally
       - run: npm install -g nx
 
-      # Bump version automatically (patch by default, change as needed)
+      # Bump version in the package
       - name: Bump version
         run: |
-          cd packages/nestjs-async-lock
+          cd nestjs-async-lock
           npm version patch --no-git-tag-version
+
+      # Update lockfile and install dependencies after version bump
+      - run: npm install
 
       # Build the package
       - run: nx build nestjs-async-lock
