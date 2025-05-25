@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tawanorg/nestjs-packages/tree/main/nestjs-async-lock"
+    "url": "git+https://github.com/tawanorg/nestjs-packages.git#main"
   },
   "bugs": {
     "url": "https://github.com/tawanorg/nestjs-packages/issues"
