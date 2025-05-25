@@ -7,6 +7,9 @@ on:
   release:
     types: [created]
 
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -23,8 +26,6 @@ jobs:
 
       - name: Authenticate with npm registry
         run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       # Install root dependencies
       - run: npm ci
@@ -48,6 +49,6 @@ jobs:
       - name: Publish to npm
         run: |
           cd dist/nestjs-async-lock
+          echo $NPM_TOKEN
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
