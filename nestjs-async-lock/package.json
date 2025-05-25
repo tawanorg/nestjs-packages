@@ -1,6 +1,6 @@
 {
   "name": "@tawandotorg/nestjs-async-lock",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "main": "./src/index.js",
   "module": "./src/index.js",
   "types": "./src/index.d.ts",
@@ -37,7 +37,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tawanorg/nestjs-async-lock.git"
+    "url": "https://github.com/tawanorg/nestjs-packages/tree/main/nestjs-async-lock"
   },
   "bugs": {
     "url": "https://github.com/tawanorg/nestjs-async-lock/issues"
@@ -66,11 +66,16 @@
       }
     }
   },
-  "dependencies": {
-    "tslib": "^2.3.0",
+  "peerDependencies": {
     "@nestjs/common": "^10.0.2",
     "@nestjs/testing": "^10.0.2",
+    "tslib": "^2.3.0"
+  },
+  "dependencies": {
     "async-mutex": "^0.5.0",
     "redlock": "^5.0.0-beta.2"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^10.0.2"
   }
 }
