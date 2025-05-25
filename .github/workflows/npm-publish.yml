@@ -1,0 +1,39 @@
+name: Publish nestjs-async-lock
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - run: npm ci
+
+      # Install nx globally
+      - run: npm install -g nx
+
+      # Bump version automatically (patch by default, change as needed)
+      - name: Bump version
+        run: |
+          cd packages/nestjs-async-lock
+          npm version patch --no-git-tag-version
+
+      # Build the package
+      - run: nx build nestjs-async-lock
+
+      # Publish the package
+      - name: Publish to npm
+        run: |
+          cd dist/nestjs-async-lock
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
