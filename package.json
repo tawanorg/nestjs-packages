@@ -53,6 +53,9 @@
   "workspaces": [
     "nestjs-async-lock"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "nx": {
     "includedScripts": [],
     "targets": {
