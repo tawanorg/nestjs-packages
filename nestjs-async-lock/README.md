@@ -104,7 +104,7 @@ AsyncLockModule.forRoot({
 #### Example: Memory Store
 
 ```typescript
-import { MemoryStore } from '@tawandotorg/nestjs-async-lock/dist/lib/drivers/memory-store';
+import { MemoryStore } from '@tawandotorg/nestjs-async-lock';
 
 AsyncLockModule.forRoot({
   default: 'memory',
