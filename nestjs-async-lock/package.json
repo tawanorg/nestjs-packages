@@ -1,0 +1,76 @@
+{
+  "name": "@tawandotorg/nestjs-async-lock",
+  "version": "1.1.6",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "!**/*.tsbuildinfo"
+  ],
+  "keywords": [
+    "nestjs",
+    "async",
+    "lock",
+    "mutex",
+    "semaphore",
+    "distributed",
+    "lock",
+    "nestjs-lock",
+    "nestjs-mutex",
+    "nestjs-semaphore",
+    "nestjs-distributed-lock",
+    "nestjs-distributed-mutex",
+    "nestjs-distributed-semaphore",
+    "nestjs-async-lock"
+  ],
+  "author": "Tew Tawan <tewtawanc@gmail.com> (https://github.com/tawanorg)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tawanorg/nestjs-async-lock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tawanorg/nestjs-async-lock/issues"
+  },
+  "homepage": "https://github.com/tawanorg/nestjs-async-lock#readme",
+  "scripts": {
+    "build": "nx build nestjs-async-lock"
+  },
+  "nx": {
+    "name": "nestjs-async-lock",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "dist/nestjs-async-lock",
+          "tsConfig": "nestjs-async-lock/tsconfig.lib.json",
+          "packageJson": "nestjs-async-lock/package.json",
+          "main": "nestjs-async-lock/src/index.ts",
+          "assets": [
+            "nestjs-async-lock/*.md"
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@nestjs/common": "^10.0.2",
+    "@nestjs/testing": "^10.0.2",
+    "async-mutex": "^0.5.0",
+    "redlock": "^5.0.0-beta.2"
+  }
+}

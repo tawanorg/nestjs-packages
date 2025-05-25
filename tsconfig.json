@@ -4,10 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/web-e2e"
+      "path": "./nestjs-async-lock"
     },
     {
-      "path": "./apps/web"
+      "path": "./nestjs-async-lock"
     }
   ]
 }
