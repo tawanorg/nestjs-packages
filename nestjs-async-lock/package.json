@@ -43,6 +43,9 @@
     "url": "https://github.com/tawanorg/nestjs-packages/issues"
   },
   "homepage": "https://github.com/tawanorg/nestjs-packages/blob/main/nestjs-async-lock/README.md",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "nx build nestjs-async-lock"
   },
